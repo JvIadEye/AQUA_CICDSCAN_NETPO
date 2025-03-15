@@ -60,7 +60,7 @@ pipeline{
                         docker pull 172.16.2.74:9006/dockerhosted-repo:${BUILD_NUMBER}
                         docker logout
 
-                        docker run -e BUILD_JOB_NAME=${JOB_NAME} -e BUILD_URL=${BUILD_URL} -e BUILD_NUMBER=${BUILD_NUMBER} --rm -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4.557 scan --host https://asia-1.cloud.aquasec.com --local 172.16.2.74:9006/dockerhosted-repo:${BUILD_NUMBER} --checkonly --no-verify --user huy.tran@netpoleons.com --password Huytr@n122 --layer-vulnerabilities                    
+                        docker run -e BUILD_JOB_NAME=${JOB_NAME} -e BUILD_URL=${BUILD_URL} -e BUILD_NUMBER=${BUILD_NUMBER} --rm -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4.557 scan --token f8211857-3864-426b-ab01-ffb7692172c2 --host https://630d27b67d.cloud.aquasec.com --local 172.16.2.74:9006/dockerhosted-repo:${BUILD_NUMBER} --checkonly --no-verify --layer-vulnerabilities                    
                     '''
                     }
                 }
