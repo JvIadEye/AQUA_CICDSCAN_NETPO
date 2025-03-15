@@ -53,7 +53,7 @@ pipeline{
                     //'''
                     //}
                     
-                    withCredentials([usernamePassword(credentialsId: 'aqua', passwordVariable: 'PSW', usernameVariable: 'USER')]){
+                    withCredentials([usernamePassword(credentialsId: 'AquaCloud', passwordVariable: 'PSW', usernameVariable: 'USER')]){
                     sh '''
                         docker login https://registry.aquasec.com -u huy.tran@netpoleons.com -p admin123
                         docker pull registry.aquasec.com/scanner:2022.4.557
